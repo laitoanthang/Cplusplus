@@ -1,0 +1,265 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sr",
+				"speech_recognition"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/Toan Thang/AppData/Roaming/Sublime Text 3/Packages/User/Run_C++-build",
+			"settings":
+			{
+				"buffer_size": 140,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "untitled.sublime-build"
+			},
+			"undo_stack":
+			[
+				[
+					1,
+					1,
+					"insert_snippet",
+					{
+						"contents": "{\n\t\"shell_cmd\": \"${0:make}\"\n}\n"
+					},
+					"AQAAAAAAAAAAAAAAGQAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					4,
+					1,
+					"paste",
+					null,
+					"AgAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAjAAAAAAAAACMAAAAAAAAABkAAAB7Cgkic2hlbGxfY21kIjogIm1ha2UiCn0K",
+					"AQAAAAAAAAABAAAAGQAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "Packages/C++/C++ Single File.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Toan Thang/AppData/Roaming/Sublime Text 3/Packages/User/Run_Cplusplus_1sublime-build",
+		"/C/Users/Toan Thang/OneDrive - VNU-HCMUS/Desktop/t3st.cpp",
+		"/C/Users/Toan Thang/AppData/Roaming/Sublime Text 3/Packages/User/Run_Cplusplus.sublime-build",
+		"/D/Run_Cplusplus.sublime-build",
+		"/C/Users/Toan Thang/OneDrive - VNU-HCMUS/Desktop/KHTN/TH_KTLT/Recursion/Array/Array/Source.cpp",
+		"/C/Users/TOANTH~1/AppData/Local/Temp/Rar$DRa16600.9390/chromedriver.exe",
+		"/C/Users/Toan Thang/OneDrive - VNU-HCMUS/Desktop/Python/Crawl_data/crawl_data.py",
+		"/D/FlappyBird/FlappyBird.sln",
+		"/C/Users/Toan Thang/OneDrive/Desktop/Python/FRIDAY.py",
+		"/C/Users/Toan Thang/Desktop/ThangLT/Code/mario/Source/mario.py",
+		"/C/Users/Toan Thang/Desktop/ThangLT/Code/trolyao.py",
+		"/C/Users/Toan Thang/Desktop/ThangLT/Code/trolyao.py.py",
+		"/C/Users/Toan Thang/Desktop/ThangLT/Code/mario/Source/mario.py.py",
+		"/C/Users/Toan Thang/Desktop/ThangLT/Code/trolyao/trolyao.py"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Toan Thang/AppData/Roaming/Sublime Text 3/Packages/User/Run_C++-build",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 140,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								140,
+								140
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 126.400001526
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/Run_Cplusplus.sublime-build",
+	"project": "Source.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
