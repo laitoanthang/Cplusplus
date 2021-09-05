@@ -18,7 +18,8 @@
   "C_Cpp_Runner.warningsAsError": false,
   "files.associations": {
     "iostream": "cpp",
-    "istream": "cpp"
+    "istream": "cpp",
+    "new": "cpp"
   },
   "cSpell.words": [
     "khoang"
