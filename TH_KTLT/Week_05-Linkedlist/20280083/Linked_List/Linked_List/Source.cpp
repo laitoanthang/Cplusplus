@@ -17,6 +17,8 @@ Node* Create_Node(int x)
 {
 	Node* p = nullptr;
 	p = new Node;
+	if (p == nullptr)
+		return NULL;
 	p->data = x;
 	p->pNext = nullptr;
 	return p;
@@ -48,6 +50,17 @@ void Del_Linked_List(Linked_List& l)
 	}
 	l.pHead = nullptr;
 	l.pTail = nullptr;
+	/*
+	Node* pNode;
+	while (l.pHead != NULL)
+	{
+		pNode = l.pHead;
+		l.pHead = l.pHead->pNext;
+		delete pNode;
+	} 
+	l.pHead = nullptr;
+	l.pTail = nullptr;
+	*/
 }
 
 void OutLinked_List(Linked_List l)
@@ -60,9 +73,11 @@ void OutLinked_List(Linked_List l)
 	system("pause");
 }
 
-void addFirst(Linked_List& l, int x)
+bool addHead(Linked_List& l, int x)
 {
 	Node* temp = Create_Node(x);
+	if (temp == NULL)
+		return false;
 	if (l.pHead == nullptr)
 	{
 		l.pHead = l.pTail = temp;
@@ -71,6 +86,7 @@ void addFirst(Linked_List& l, int x)
 		temp->pNext = l.pHead;
 		l.pHead = temp;
 	}
+	return true;
 }
 
 void addLast(Linked_List& l, int x)
@@ -198,6 +214,17 @@ void reverse(Linked_List& l)
 	l.pHead = prev;
 }
 
+void PrintList(Linked_List l)
+{
+	Node* pNode;
+	pNode = l.pHead;
+	while (pNode != NULL)
+	{
+		cout << pNode->data;
+		pNode = pNode->pNext; // Move pointer to next node
+	}
+}
+
 void Menu(Linked_List& l)
 {
 	int x = 0;
@@ -237,7 +264,7 @@ void Menu(Linked_List& l)
 		if (choice == 4) {
 			cout << "Enter a number\n";
 			cin >> x;
-			addFirst(l, x);
+			addHead(l, x);
 		}
 		if (choice == 5) {
 			cout << "Enter a number\n";
