@@ -3,8 +3,8 @@ using namespace std;
 
 struct Node
 {
-	int data = 0;
-	Node* pNext = nullptr;
+	int data;
+	Node* pNext;
 };
 
 struct Linked_List
@@ -73,7 +73,7 @@ void OutLinked_List(Linked_List l)
 	system("pause");
 }
 
-bool addHead(Linked_List& l, int x)
+bool addFirst(Linked_List& l, int x)
 {
 	Node* temp = Create_Node(x);
 	if (temp == NULL)
@@ -264,7 +264,7 @@ void Menu(Linked_List& l)
 		if (choice == 4) {
 			cout << "Enter a number\n";
 			cin >> x;
-			addHead(l, x);
+			addFirst(l, x);
 		}
 		if (choice == 5) {
 			cout << "Enter a number\n";
