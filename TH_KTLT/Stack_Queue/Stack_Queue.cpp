@@ -7,6 +7,16 @@ struct Node
 	Node* pNext;
 };
 
+struct Stack
+{
+	Node* pStack;
+};
+
+struct Queue
+{
+	Node* pQueue;
+};
+
 void initStack(Node* &pStack)
 {
 	pStack = nullptr;
@@ -123,34 +133,37 @@ void PrintQueue(Node* pQueue)
 
 int main()
 {
-	Node* pStack = NULL;
-	//initStack(pStack);
-	Node* pQueue = NULL;
-	//initQueue(pQueue);
+	Stack s;
+	
+	//Node* pStack = NULL;
+	initStack(s.pStack);
+	//Node* pQueue = NULL;
+	Queue q;
+	initQueue(q.pQueue);
 	int n = 10;
 	cout << "Input n = ";
 	cin >> n;
-	while (n!=0)
+	for (int i = 0; i<n; i++)
 	{
-		PushStack(pStack, n);
-		EnQueue(pQueue, n);
-		n--;
+		PushStack(s.pStack, i+1);
+		EnQueue(q.pQueue, i+1);
 	}
-	PrintStack(pStack);
-	PrintQueue(pQueue);
-	Node* pNode = DeQueue(pQueue);
-	if(pNode != NULL) 
-		printf("\nGia tri phan tu (Queue) : %d\n", pNode->data);
-	else
-		printf("\nNULL\n");
-	Node* pNode2 = PopStack(pStack);
+	PrintStack(s.pStack);
+	PrintQueue(q.pQueue);
+	Node* pNode2 = PopStack(s.pStack);
 	if(pNode2 != NULL)
 		printf("\nGia tri phan tu (Stack) : %d\n", pNode2->data);
 	else
 		printf("\nNULL\n");
+	Node* pNode = DeQueue(q.pQueue);
+	if(pNode != NULL) 
+		printf("\nGia tri phan tu (Queue) : %d\n", pNode->data);
+	else
+		printf("\nNULL\n");
+	
 
-	PrintStack(pStack);
-	PrintQueue(pQueue);
+	PrintStack(s.pStack);
+	PrintQueue(q.pQueue);
 	return 0;
 }
 
