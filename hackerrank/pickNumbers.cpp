@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 using namespace std;
 // input length of array: 2 <= n <= 100
 // input 0 < a[i] < 100
@@ -8,6 +9,11 @@ using namespace std;
 // Because the longest array is {4 3 3}
 
 // solution: sử dụng kĩ thuật đếm phân phối 
+// nếu 0 < a[i] < 10^9 thì kĩ thuật trên chịu, không làm được
+// cách 2: sắp xếp mảng tăng dần (dùng quicksort)
+// 1 3 3 4 5 6
+// có thể là {1} {3 3 4} {3 4} {4 5} {5 6}
+
 
 void demphanphoi(int a[], int n, int b[])
 {
@@ -40,16 +46,14 @@ int main()
 	int n = 6;
 	int b[100] = {0};
 	demphanphoi(a, n, b); // O(n)
-	// for (int i = 1; i<n+1; i++)
-	// {
-	// 	cout << b[i] << "\t";
-	// }
 	// mảng b là mảng phân phối của array a
 	int m = index_max(b); // O(100)
 	if (b[m-1] > b[m+1]) cout << endl << b[m]+b[m-1]; // O(1)
 	else cout << endl << b[m]+b[m+1];
 	// Do phuc tap O(n+100)
 	// cao nhat khi n = 100
+	
+
 	
 
 	return 0;
