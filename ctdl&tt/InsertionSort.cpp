@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 // O(n^2)
+// Ý tưởng: Lần lượt xét các anh về sau
+// Anh j mà nhỏ hơn anh j - 1 thì
+// swap vị trí của hai anh
+// sau đó giảm j đi để xét tiếp 2 anh tiếp theo
+
 void InsertionSort(int a[], int n)
 {
 	int i,j;
