@@ -46,8 +46,19 @@ int Count_Solution(int n)
 	int ans = p[n];
 	delete p;
 	return ans;
-
 }
+
+int Sum_Solution(int n)
+{
+	if (n == 0 || n == 1)
+		return 1;
+	else 
+		return Sum_Solution(n-1) + Sum_Solution(n-2);
+}
+// Quy hoạch động là giải quyết bài toán theo chiều xuôi
+// chứ không phải theo chiều ngược
+// Đệ quy giải quyết bài toán theo chiều ngược
+// tức đệ quy là gọi đệ quy của 5 -> đệ quy 4 -> ...
 
 int main()
 {
@@ -55,5 +66,6 @@ int main()
 	cout << "Input n=";
 	cin >> n;
 	cout << Count_Solution(n);
+	cout << endl << Sum_Solution(n);
 	return 0;
 }

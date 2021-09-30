@@ -3,6 +3,11 @@
 #include <iostream>
 using namespace std;
 
+// hàm xoá một kí tự = xoá một hàm xoá một vị trí trong mảng một chiều
+// chuỗi là mảng một chiều các kí tự "abcd" => 'a' 'b' 'c' 'd' '\0'
+
+
+
 int lens(char* s)
 {
 	int i=0;
@@ -12,14 +17,16 @@ int lens(char* s)
 }
 
 char ToUpper(char c)
-{
+{ // Nếu kí tự xét nằm trong a đến z thì 
+// kí tự = kí tự - 'a' + 'A'
 	if (c>='a' && c<='z')
 		return c-'a'+'A';
 	return c;
 }
 
 char ToLower(char c)
-{
+{ // Nếu kí tự nằm trong khoảng từ 'A' đến 'Z' thì 
+// kí tự = kí tự - 'A' + 'a' (bỏ lớn lấy nhỏ)
 	if (c>='A' && c<='Z')
 		return c-'A'+'a';
 	return c;
@@ -50,9 +57,10 @@ char* Normalize(char* s) {
 
             ns[j] = c;
             j++;
-        }
+        } // trường hợp cái kí tự đặc biệt
         else if (i+1 < len && s[i+1] != ' ') {
-            // Neu la khoang trang nhung ki tu sau khong phai la khoang trang thi them vao
+            // Neu la khoang trang nhung ki tu sau 
+            // khong phai la khoang trang thi them vao
             ns[j] = s[i];
             j++;
         }
@@ -62,11 +70,10 @@ char* Normalize(char* s) {
 
 int main()
 {
-	char* s = nullptr;
-	s = new char[50];
-	cout << "Input sing\n";
+	char s[50];
+	cout << "Input string\n";
 	cin.getline(s, 51);
 	cout << Normalize(s);
-	delete[] s;
+	
 	return 0;
 }

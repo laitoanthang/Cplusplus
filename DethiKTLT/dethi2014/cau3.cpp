@@ -5,7 +5,7 @@
 #include <iostream>
 using namespace std;
 
-int recursionTo2(int n)
+void recursionTo2(int n)
 {
 	if (n==1 || n==0)
 		cout << n;
