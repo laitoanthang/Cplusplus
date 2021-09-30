@@ -55,6 +55,8 @@ Node* Create_Node()
 	Input_1hs(hs);
 	Node* p = NULL;
 	p = new Node;
+	if (p == NULL)
+		return nullptr;
 	p->data = hs;
 	p->next = NULL;
 	return p;
