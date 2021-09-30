@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
-
+// khai báo danh sách liên kết đơn gồm các bước
+// khởi tạo linkedlist,  tạo node, 
+// thêm đầu, thêm cuối, nhập, xuất, giải phóng ds
 struct Node
 {
 	int data;
