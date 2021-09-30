@@ -19,7 +19,8 @@
   "files.associations": {
     "iostream": "cpp",
     "istream": "cpp",
-    "new": "cpp"
+    "new": "cpp",
+    "iosfwd": "cpp"
   },
   "cSpell.words": [
     "khoang"
