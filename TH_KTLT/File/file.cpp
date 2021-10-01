@@ -59,7 +59,7 @@ void convertTextToBinary()
 	ifstream fin;
 	fin.open(text, ios::in);
 	ofstream fout;
-	fout.open(binary, ios::out|ios::binary);
+	fout.open(binary, ofstream::binary);
 	if (!fin.is_open())
 	{
 		cout << "Error when opening your file\n";
@@ -78,7 +78,31 @@ void convertTextToBinary()
 
 void convertBinaryToText()
 {
+	char* text = new char[50];
+	char* binary = new char[50];
+	cin.ignore();
+	cout << "Input binary file name: ";
+	cin.getline(binary, 51);
+	cout << "Input text file name: ";
+	cin.getline(text, 51);
+	ifstream fin;
+	fin.open(binary, ifstream::binary);
+	ofstream fout;
+	fout.open(text, ios_base::out);
+	if (!fin.is_open())
+	{
+		cout << "Error when opening your file\n";
+		return;
+	}
+	int x = 0;
+	int y = 0;
+	fin.read((char*)&x, sizeof(x));
+	fin.read((char*)&y, sizeof(y));
+	fout << x << "  " << y;
+
 	
+	fin.close();
+	fout.close();
 }
 
 void Menu()
@@ -108,6 +132,8 @@ void Menu()
 			writing_extra();
 		if (choice == 4)
 			convertTextToBinary();
+		if (choice == 5)
+			convertBinaryToText();
 	} while (choice!=0);
 }
 
