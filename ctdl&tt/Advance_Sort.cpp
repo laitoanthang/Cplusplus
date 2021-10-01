@@ -1,65 +1,53 @@
 #include <iostream>
 using namespace std;
 
-// QuickSort
-// Step 1: Find pivot
-// Step 2: Phân hoạch thành mảng nhỏ hơn (r -> trước) và 
-// mảng lớn hơn HOẶC BẰNG pivot (l -> sau)
-// dùng đệ quy
-
-int findPivot(int a[], int n)
-{ // return index of Pivot
-	int pivot = 0;
-	int i = 1;
-	while (i < n)
-	{
-		if (a[i] > a[pivot])
-			return i;
-		else if (a[i] < a[pivot])
-			return pivot;
-		i++;
-	}
-	return -1;
+void print_array(int *arr, int ize) {
+    int i = 0;
+    for(; i < ize; ++i){
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
 }
 
-int Partition(int a[], int low, int high, int pivot)
-{ // Phân hoạch mảng
-	int left = low;
-	int right = high;
-	while (left <= right)
-	{
-		while (a[left] < a[pivot])
-			left++;
-		while (a[right] >= a[pivot])
-			right--;
-		if (left < right) 
-			swap(a[left], a[right]);
-	}
-	// neu left > right thì...
-	return left;
+int partition(int *&arr, int low, int high) 
+{ // low is the index of the first element
+// and high is the index of the last element
+    int pivot = arr[high]; // set the pivot is the last element
+    int i = low - 1; // i: index of smaller element
+    for(int j = low; j <= high - 1; ++j) {
+        // j: the variable of loop
+        // chạy từ đầu đến phần tử kế cuối
+        if (arr[j] <= pivot) {
+            i++; 
+            swap(arr[i], arr[j]);
+        }
+        // nếu a[j] <= pivot thì swap phần tử lớn
+        // hơn pivot (a[i]) vs phần tử nhỏ hơn pivot (a[j])
+        // nếu a[j] > pivot thì tăng j tiếp
+    }
+    // lúc này vẫn có a[i+1] > pivot nên swap nó với pivot
+    i++; 
+    swap(arr[i], arr[high]);
+    return i;
+    // return phần tử bên trái của mảng con >= pivot
 }
 
-int QuickSort(int i, int j)
+void quicksort(int *arr, int low, int high) {
+    if (low < high) {
+        int pivot = partition(arr, low, high);
+        quicksort(arr, low, pivot - 1); // sort before pivot
+        quicksort(arr, pivot + 1, high); // sort after pivot
+    }
+}
+
+int main() 
 {
-	// Find Pivot
-	// Phân hoạch
-}
-
-void printArray(int a[], int n)
-{
-	for (int i=0; i < n; i++)
-	{
-		cout << a[i] << "\t";
-	}
-}
-
-int main()
-{
-	int n = 10;
-	int a[n] = {5,4,2,1,5,12,8,10,15,8};
-	int pivot = findPivot(a, n);
-	cout << Partition(a, 0, n-1, pivot);
-	//printArray(a, n );
-	//system("pause");
-	return 0;
+    int arr[] = {3,6,2,1,5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    cout << "before ";
+    print_array(arr, n);
+    quicksort(arr, 0, n-1);
+    cout << ("after ");
+    print_array(arr, n);
+    return 0;
 }
