@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 using namespace std;
 
 // QUICK SORT
@@ -42,7 +43,29 @@ void quicksort(int *arr, int low, int high) {
     }
 }
 
+void QuickSort(int a[], int left, int right){
+    int i, j, x;
+    if (left >= right)
+        return;
 
+    x = a[right]; // chọn phần tử giữa làm giá trị mốc
+    i = left; j = right;
+    while (i < j) 
+    {
+        while (a[i] < x)
+            i++;
+        while(a[j] > x)
+            j--;
+        
+        if(i <= j) {
+            swap(a[i], a[j]);
+            i++ ;
+            j--;
+        }
+    }
+    QuickSort(a, left, j);
+    QuickSort(a, i, right);
+}
 // -------------------------------------------------------
 // HEAP SORT
 void heapify(int arr[], int n, int i)
@@ -85,17 +108,26 @@ void heapSort(int arr[], int n)
     }
 }
 
+// -------------------------------------------------------
+// Merge Sort
+
 
 
 int main() 
 {
-    int arr[] = {3,6,2,1,5};
+    clock_t start, finish;
+    start = clock();
+    int arr[] = {3,6,2,1,5,8,10,10,0};
     int n = sizeof(arr)/sizeof(arr[0]);
     cout << "before ";
     print_array(arr, n);
     // quicksort(arr, 0, n-1);
-    heapSort(arr, n);
+    // heapSort(arr, n);
+    QuickSort(arr, 0, n-1);
     cout << ("after ");
     print_array(arr, n);
+    finish = clock();
+    clock_t duration = finish - start;
+    cout << endl << duration; 
     return 0;
 }
