@@ -8,17 +8,17 @@ void SelectionSort(int a[], int n)
 {// kĩ thuật lính canh
 	for (int i = 0; i < n-1; i++)
 	{
-		int lowindex = i;
-		int lowkey = a[i];
-		for (int j = i; j < n; j++)
+		int min = i;
+		//int lowkey = a[i];
+		for (int j = i+1; j < n; j++)
 		{
-			if (a[j] < lowkey)
+			if (a[j] < a[min])
 			{
-				lowkey = a[j];
-				lowindex = j;
+				min = j;
 			}
 		}
-		swap(a[i], a[lowindex]);
+		if (min != i)
+			swap(a[i], a[min]);
 	}
 
 }
