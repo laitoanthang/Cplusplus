@@ -11,6 +11,12 @@
 #include <fstream>
 using namespace std;
 
+// dùng phương pháp quy hoạch động
+int find_way(int a[][50], int row, int col, int i, int j, int &multi)
+{ 
+// it's kind of really difficult		
+}
+
 int main()
 {
 	int row = 0;
@@ -51,6 +57,28 @@ int main()
 		}
 		cout << endl;
 	}
+
+/*
+Bạn được cho một ma trận kích thước N x M, ô ở hàng i và
+cột j gọi là ô (i, j) và có giá trị là grid[i][j]. Bạn 
+hiện tại đang đứng tại ô (0, 0), mỗi lần di chuyển, bạn
+chỉ được phép di chuyển sang phải hoặc xuống dưới. 
+Hãy làm sao để có thể đến được ô (n - 1, m - 1) sao cho 
+tích của các số trên đường đi là lớn nhất và phải là
+một số nguyên không âm. Nếu như không tồn tại một 
+đường đi có tích là số nguyên không âm thì trả về -1,
+ngược lại thì trả về tích có giá trị lớn nhất. 
+Vì tích khá lớn nên ta đưa ra kết quả mod cho 10^9 + 7. 
+*/
+	int multi = b[0][0];
+	if (multi == -1)
+	{
+		cout << "-1";
+		return 0;
+	}
+	
+
+
 	
 	fin.close();
 	return 0;
