@@ -5,6 +5,8 @@ using namespace std;
 // Anh j mà nhỏ hơn anh j - 1 thì
 // swap vị trí của hai anh
 // sau đó giảm j đi để xét tiếp 2 anh tiếp theo
+// cách này tốt hơn Selection Sort
+
 
 void InsertionSort(int a[], int n)
 {

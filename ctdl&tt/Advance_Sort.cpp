@@ -128,6 +128,6 @@ int main()
     print_array(arr, n);
     finish = clock();
     clock_t duration = finish - start;
-    cout << endl << duration; 
+    // cout << endl << duration; 
     return 0;
 }
