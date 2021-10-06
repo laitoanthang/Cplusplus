@@ -201,6 +201,14 @@ void Match_2list(Linked_List l, Linked_List new_list)
 
 }
 
+// idea:
+// Gán con trỏ Cur bằng head, prev và next thì nullptr
+// Khi cur mà khác nullptr
+// thì di chuyển anh next bằng next của Cur
+// chuyển ngược liên kêt
+// di chuyển 2 con trỏ còn lại (cur và prev) lên 1 đv
+// head = anh prev (vì khi đấy, next = nullptr trước
+// sau đó đến anh cur cũng dính vào)
 void reverse(Linked_List& l)
 {
 	Node* prev = nullptr;
