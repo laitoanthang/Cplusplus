@@ -21,7 +21,8 @@
     "istream": "cpp",
     "new": "cpp",
     "iosfwd": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "cmath": "cpp"
   },
   "cSpell.words": [
     "khoang"
