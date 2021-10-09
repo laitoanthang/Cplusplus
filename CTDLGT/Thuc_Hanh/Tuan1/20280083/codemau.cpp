@@ -186,38 +186,79 @@
 // 	return 0;
 // }
 
+// #include <stdio.h>
+// void DocHetFile1(char* tenFile)
+// {
+// 	FILE* fi = fopen(tenFile, "rt");
+// 	float temp;
+// 	while (!feof(fi))
+// 	{
+// 		fscanf(fi, "%f", &temp);
+// 		printf("%0.1f ", temp);
+// 	}
+// 	printf("\n");
+// 	fclose(fi);
+// }
+// void DocHetFile2(char* tenFile)
+// {
+// 	FILE* fi = fopen(tenFile, "rt");
+// 	float temp;
+// 	while (!feof(fi))
+// 	{
+// 		if (fscanf(fi, "%f", &temp)>0)
+// 			printf("%0.1f ", temp);
+// 		else
+// 			break;
+// 	}
+// 	printf("\n");
+// 	fclose(fi);
+// }
+// int main()
+// {
+// 	printf("Doc khi khong biet so luong phan tu, doc den het file thi dung:\n");
+// 	DocHetFile2("input2.txt");
+// 	DocHetFile2("input3.txt");
+// 	return 0;
+// }
+
 #include <stdio.h>
-void DocHetFile1(char* tenFile)
+int Tong(int* a, int n)
 {
-	FILE* fi = fopen(tenFile, "rt");
-	float temp;
-	while (!feof(fi))
-	{
-		fscanf(fi, "%f", &temp);
-		printf("%0.1f ", temp);
-	}
-	printf("\n");
-	fclose(fi);
+	if ( n == 0)
+		return a[0];
+	return Tong(a, n-1) + a[n];
 }
-void DocHetFile2(char* tenFile)
+
+int Multi(int* a, int n)
 {
-	FILE* fi = fopen(tenFile, "rt");
-	float temp;
-	while (!feof(fi))
-	{
-		if (fscanf(fi, "%f", &temp)>0)
-			printf("%0.1f ", temp);
-		else
-			break;
-	}
-	printf("\n");
-	fclose(fi);
+	if ( n == 0)
+		return a[0];
+	return Multi(a, n-1) * a[n];
+}
+
+int SumOddNumbers(int* a, int n)
+{
+	if (n == -1)
+		return 0;
+	if (a[n] % 2 != 0)
+		return SumOddNumbers(a, n-1) + a[n];
+	else return SumOddNumbers(a, n-1);
 }
 int main()
 {
-	printf("Doc khi khong biet so luong phan tu, doc den het file thi dung:\n");
-	DocHetFile2("input2.txt");
-	DocHetFile2("input3.txt");
+	int n;
+	printf("Nhap n: ");
+	scanf("%d", &n);
+	int* a = new int[n];
+	for (int i = 0; i < n; i++)
+	{
+		printf("Nhap a[%d] = ",i);
+		scanf("%d",&a[i]);
+	}
+	printf("%d\n",SumOddNumbers(a, n-1));
+	printf("%d\n",Multi(a, n-1));
+	printf("%d\n",Tong(a, n-1));
 	return 0;
 }
+
 
