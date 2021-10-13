@@ -78,12 +78,13 @@ void OutLinked_List(Linked_List l)
 bool addFirst(Linked_List& l, int x)
 {
 	Node* temp = Create_Node(x);
-	if (temp == NULL)
-		return false;
-	if (l.pHead == nullptr)
+	if (temp == nullptr)
 	{
-		l.pHead = l.pTail = temp;
+		cout << "Cannot create this node\n";
+		return false;
 	}
+	if (isEmpty(l))
+		l.pHead = l.pTail = temp;
 	else {
 		temp->pNext = l.pHead;
 		l.pHead = temp;
