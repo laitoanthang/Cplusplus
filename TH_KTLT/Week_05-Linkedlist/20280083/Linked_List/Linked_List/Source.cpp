@@ -92,9 +92,14 @@ bool addFirst(Linked_List& l, int x)
 	return true;
 }
 
-void addLast(Linked_List& l, int x)
+bool addLast(Linked_List& l, int x)
 {
 	Node* temp = Create_Node(x);
+	if (temp == nullptr)
+	{
+		cout << "cannot open this node\n";
+		return false;
+	}
 	if (l.pHead == nullptr)
 	{
 		l.pHead = l.pTail = temp;
@@ -103,6 +108,7 @@ void addLast(Linked_List& l, int x)
 		l.pTail->pNext = temp;
 		l.pTail = temp;
 	}
+	return true;
 }
 
 void addAfter(Linked_List& l, int val1, int val2) //add a value2 after value1 in linked list
