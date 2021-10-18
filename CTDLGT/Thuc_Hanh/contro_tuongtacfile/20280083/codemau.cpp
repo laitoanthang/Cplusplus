@@ -1,3 +1,6 @@
+// MSSV: 20280083
+// Ho ten: Lai Toan Thang
+
 // #include <stdio.h>
 // struct DIEM
 // {
