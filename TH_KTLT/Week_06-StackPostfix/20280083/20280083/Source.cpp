@@ -12,17 +12,17 @@ struct Node
 
 struct Stack
 {
-	Node* pTop;
+	Node* pStack;
 };
 
 void initStack(Stack& s)
 {
-	s.pTop = nullptr;
+	s.pStack = nullptr;
 }
 
 bool isEmpty(Stack& s)
 {
-	return (s.pTop == nullptr);
+	return (s.pStack == nullptr);
 }
 
 Node* Create_Node(float x)
@@ -43,10 +43,10 @@ void Push(Stack& s, float x)
 	//if empty
 	Node* p = Create_Node(x);
 	if (isEmpty(s))
-		s.pTop = p;
+		s.pStack = p;
 	else {
-		p->pNext = s.pTop;
-		s.pTop = p;
+		p->pNext = s.pStack;
+		s.pStack = p;
 	}
 }
 
@@ -57,9 +57,9 @@ void Pop(Stack& s, float& x)
 		cout << "Stack is empty\n";
 		return;
 	}
-	x = s.pTop->data;
-	Node* pDel = s.pTop;
-	s.pTop = s.pTop->pNext;
+	x = s.pStack->data;
+	Node* pDel = s.pStack;
+	s.pStack = s.pStack->pNext;
 	delete pDel;
 }
 
@@ -69,12 +69,12 @@ float Top(Stack s)
 	{
 		return NULL;
 	}
-	return s.pTop->data;
+	return s.pStack->data;
 }
 
 void Prfloat_Stack(Stack s)
 {
-	/*for (Node* i = s.pTop; i != nullptr; i = i->pNext) PRfloat STACK AND POP THE TOP
+	/*for (Node* i = s.pStack; i != nullptr; i = i->pNext) PRfloat STACK AND POP THE TOP
 	{
 		cout << i->data << "\t";
 	}*/
@@ -129,10 +129,9 @@ float Evacuate_Postfix(Stack s, string str)
 	return res;
 }
 
-float main()
+int main()
 {
 	Stack s;
-	float x = 0;
 	string str = "";
 	initStack(s);
 	ifstream filein;

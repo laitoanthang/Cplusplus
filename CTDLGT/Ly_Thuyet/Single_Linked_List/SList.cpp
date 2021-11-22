@@ -85,30 +85,31 @@ void addLast(SList& l, Node* temp)
 	}
 }
 
-void addAt(SList &l, int value, int position){
-   	Node* val = Create_Node(value);
-    if(position == 0 || l.pHead == NULL){
-        addFirst(l, val); // Nếu vị trí chèn là 0, tức là thêm vào đầu
-    }else{
-        // Bắt đầu tìm vị trí cần chèn. Ta sẽ dùng k để đếm cho vị trí
-        int k = 1;
-        Node* p = l.pHead;
-        while(p != NULL && k != position){
-            p = p->pNext;
-            ++k;
-        }
- 
-        if(k != position){
-            // Nếu duyệt hết danh sách lk rồi mà vẫn chưa đến vị trí cần chèn, ta sẽ mặc định chèn cuối
-            // Nếu bạn không muốn chèn, hãy thông báo vị trí chèn không hợp lệ
-            addLast(l, val);
-            // printf("Vi tri chen vuot qua vi tri cuoi cung!\n");
-        }else{
-            Node* temp = Create_Node(value);
-            temp->pNext = p->pNext;
-            p->pNext = temp;
-        }
-    }
+void addAt(SList &l, int value, int position)
+{
+	Node* val = Create_Node(value);
+    	if(position == 0 || l.pHead == NULL){
+      	addFirst(l, val); // Nếu vị trí chèn là 0, tức là thêm vào đầu
+	}else{
+		// Bắt đầu tìm vị trí cần chèn. Ta sẽ dùng k để đếm cho vị trí
+		int k = 1;
+		Node* p = l.pHead;
+		while(p != NULL && k != position){
+		p = p->pNext;
+		++k;
+		}
+
+		if(k != position){
+		// Nếu duyệt hết danh sách lk rồi mà vẫn chưa đến vị trí cần chèn, ta sẽ mặc định chèn cuối
+		// Nếu bạn không muốn chèn, hãy thông báo vị trí chèn không hợp lệ
+		addLast(l, val);
+		// printf("Vi tri chen vuot qua vi tri cuoi cung!\n");
+		}else{
+		Node* temp = Create_Node(value);
+		temp->pNext = p->pNext;
+		p->pNext = temp;
+		}
+	}
     
 }
 
