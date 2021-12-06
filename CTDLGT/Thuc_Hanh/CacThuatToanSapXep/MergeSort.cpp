@@ -1,97 +1,85 @@
 #include <iostream>
-#include <fstream>
 using namespace std;
-
-
-int b[50], c[50], nb, nc; // Ghi chú: 2 mảng này dùng để làm gì?
-
-void Distribute(int a[], int N, int& nb, int& nc, int k) {
-    int i, pa, pb, pc; //Ghi chú: các biến này có ý nghĩa gì?
-    pa = pb = pc = 0;
-    while (pa < N) {
-        for (i = 0; (pa < N) && (i < k); i++, pa++, pb++) { //Ghi chú: vòng lặp này có ý nghĩa gì?
-            b[pb] = a[pa];
-        }
-        for (i = 0; (pa < N) && (i < k); i++, pa++, pc++) { //Ghi chú: vòng lặp này có ý nghĩa gì?
-            c[pc] = a[pa];
-        }
-    }
-    nb = pb; nc = pc;
-}
-
-
-void MergeSubarr(int a[], int nb, int nc, int& pa, int& pb, int& pc, int k) {
-    int rb, rc;
-    rb = min(nb, pb + k);
-    rc = min(nc, pb + k);
-    while ((pb < rb) && (pc < rc)) {
-        if (b[pb] < c[pc])
-            a[pa++] = b[pb++];
-        else a[pa++] = c[pc++];
-    }
-    while (pb < rb) {
-        a[pa++] = b[pb++];
-    }
-    while (pc < rc) {
-        a[pa++] = c[pc++];
-    }
-}
-
-void Merge(int a[], int nb, int nc, int k) {
-    int pa, pb, pc;
-    pa = pb = pc = 0;
-
-    while ((pb < nb) && (pc < nc)) 
-    {
-        MergeSubarr(a, nb, nc, pa, pb, pc, k);
-    }
-
-    while (pb < nb) {
-        a[pa++] = b[pb++]; //Ghi chú: câu lệnh này có ý nghĩa gì?
-    }
-    while (pc < nc) {
-        a[pa++] = c[pc++]; //Ghi chú: câu lệnh này có ý nghĩa gì?
-    }
-}
-
-
-void mergeSort(int a[], int begin, int end)
-{
-    if (begin >= end)
-        return; // Returns recursively
   
-    int mid = begin + (end - begin) / 2;
-    mergeSort(a, begin, mid);
-    mergeSort(a, mid + 1, end);
-    Merge(a, begin, mid, end);
+// Merges two subarrays of a[].
+// First subarray is a[l..m]
+// Second subarray is a[m+1..r]
+void merge(int a[], int left, int mid, int right)
+{
+    int i, j, k;
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+  
+    // Tạo 2 mảng tạm thời với số phần tử tương ứng của nửa đầu và nửa sau
+    int L[n1], R[n2];
+  
+    // Copy dữ liệu vào 2 mảng
+    for (i = 0; i < n1; i++)
+        L[i] = a[left + i];
+    for (j = 0; j < n2; j++)
+        R[j] = a[mid + 1 + j];
+  
+    // Merge 2 cái array tạm thời lại
+    i = 0; 
+    j = 0; 
+    k = left; 
+    while (i < n1 && j < n2) {// anh nào nhỏ hơn thì cho anh đấy vào a[] trước
+        if (L[i] >= R[j]) { 
+            a[k] = L[i];
+            i++;
+        }
+        else {
+            a[k] = R[j];
+            j++;
+        }
+        k++; // lặp lại quá trình như trên nhưng index của anh vừa đưa vào thì +1
+    }
+  
+    /* Copy những phần tử còn lại của L[] */
+    while (i < n1) {
+        a[k] = L[i];
+        i++;
+        k++;
+    }
+  
+    // Copy những phần tử còn lại của R[]
+    while (j < n2) {
+        a[k] = R[j];
+        j++;
+        k++;
+    }
 }
 
+void mergeSort(int a[], int left, int right)
+{
+    if (left < right) {
+        int mid = (left + right) / 2;
+  
+        mergeSort(a, left, mid); // Sort nửa phần đầu
+        mergeSort(a, mid + 1, right); // Sort nữa phần sau
+  
+        merge(a, left, mid, right);
+    }
+}
+  
 void printArray(int a[], int n)
 {
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < n; i++)
         cout << a[i] << " ";
-    cout << "\n";
+    printf("\n");
 }
-
+  
+/* Driveright code */
 int main()
 {
-	ifstream fin;
-	fin.open("input.txt");
-	if (!fin.is_open())
-	{
-		cout << "cannot open this file\n";
-		return -1;
-	}
-	int n = 0;
-	int a[50];
-	while (!fin.eof())
-	{
-		fin >> a[n];
-		n++;
-	}
-	// int n = sizeof(a) / sizeof(a[0]);
-	mergeSort(a, 0, n-1);
-	cout << "Sorted array is \n";
-	printArray(a, n);
-	return 0;
+    int a[] = {5, 2, 9, 3, 7, 2, 4, 11};
+    int n = sizeof(a) / sizeof(a[0]);
+  
+    cout << "Given array is \n";
+    printArray(a, n);
+    mergeSort(a, 0, n - 1);
+  
+    cout << "\nSorted array is \n";
+    printArray(a, n);
+    return 0;
 }
