@@ -187,6 +187,18 @@ void CountLeaf(NODE* pTree, int &count)
 	}
 }
 
+void print2D(NODE* pTree, int space)
+{
+	if (pTree == nullptr)
+		return;
+	space += 5;
+	print2D(pTree->pRight, space);
+	cout << endl;
+	for (int i = 5; i < space; i++)
+		cout << " ";
+	cout << pTree->Key << "\n";
+	print2D(pTree->pLeft, space);
+}
 
 int main()
 {
@@ -229,6 +241,10 @@ int main()
 	}
 	else printf("%d khong co trong cay.\n", x);
 	cout << endl;
+	
 	cout << countInput - count << " Nodes is not duplicated\n";
+	int space = 0;
+	print2D(pTree, space);
+	
 	return 0;
 }

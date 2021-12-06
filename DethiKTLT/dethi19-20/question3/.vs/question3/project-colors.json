@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "ac69be0b-d543-4c50-81f3-112f86841a4b": {
+      "ProjectGuid": "ac69be0b-d543-4c50-81f3-112f86841a4b",
+      "DisplayName": "test.cpp",
+      "ColorIndex": 0
+    },
+    "4085230a-abf7-4a8f-8a0d-39bc8268d78b": {
+      "ProjectGuid": "4085230a-abf7-4a8f-8a0d-39bc8268d78b",
+      "DisplayName": "question3",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

@@ -27,5 +27,7 @@
   "cSpell.words": [
     "khoang"
   ],
-  "cSpell.language": "en,en-US"
+  "cSpell.language": "en,en-US",
+  "C_Cpp.errorSquiggles": "Disabled",
+  "editor.cursorSmoothCaretAnimation": true
 }
